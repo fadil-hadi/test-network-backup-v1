@@ -1,0 +1,120 @@
+! System: NetIron CER (Serial #: CKO2541L064,  Part #: 40-1000860-14)
+! License: RT_SCALE, ADV_SVCS_PREM (LID: emqHKJGnFLJ)
+! Boot     : Version 6.0.0T185 Copyright (c) 1996-2015 Brocade Communications Systems, Inc.
+! Compiled on Jun  7 2016 at 16:10:10 labeled as ceb06000
+!  (465568 bytes) from boot flash
+! Monitor  : Version 6.0.0T185 Copyright (c) 1996-2015 Brocade Communications Systems, Inc.
+! Compiled on Jun  7 2016 at 16:10:10 labeled as ceb06000
+!  (465568 bytes) from code flash
+! IronWare : Version 6.0.0fT183 Copyright (c) 1996-2015 Brocade Communications Systems, Inc.
+! Compiled on Feb 15 2018 at 15:04:40 labeled as ce06000f
+!  (18441172 bytes) from Primary
+! CPLD Version: 0x00000001
+! Micro-Controller Version: 0x0000000d
+! Extended route scalability
+! PBIF Version: 0x0162
+! 800 MHz Power PC processor 8544 (version 8021/0023) 400 MHz bus
+! 512 KB Boot Flash (MX29LV040C), 64 MB Code Flash (MT28F256J3)
+! 2048 MB DRAM
+! *** NetIron CER 2024C-4X ***
+! 
+! ---POWERS ---
+! Power 1 (BRCD-10G - AC 504W): Installed (OK)
+! Power 2: not present
+! Total power budget for system = 504 W
+! 
+! --- FANS ---
+! Metro fan tray (fan 1): Status = OK, 
+! Metro fan tray (fan 2): Status = OK, 
+! Metro fan tray (fan 3): Status = OK, 
+! Metro fan tray (fan 4): Status = OK, 
+! Metro fan tray (fan 5): Status = OK, 
+! Metro fan tray (fan 6): Status = OK, 
+! 
+! --- TEMPERATURE are in auto mode (). Temperature monitoring poll period is 60 seconds.
+! Base MAC Address = 748e.f8a9.0500
+! ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+! Code Flash - Type MT28F256J3, Size 64 MB
+!   o IronWare Image (Primary)
+!     Version 6.0.0fT183, Size , Check Sum b406
+!     Compiled on Feb 15 2018 at 15:04:40 labeled as ce06000f
+!   o IronWare Image (Secondary)
+!     Version 6.0.0fT183, Size , Check Sum b406
+!     Compiled on Feb 15 2018 at 15:04:40 labeled as ce06000f
+!   o Monitor Image
+!     Version 6.0.0T185, Size , Check Sum d5b7
+!     Compiled on Jun  7 2016 at 16:10:10 labeled as ceb06000
+!   o Startup Configuration
+!     Size , Check Sum ec14
+!     Modified on 23:27:21 GMT+00 Tue Jan 02 1900
+! 
+! Boot Flash - Type MX29LV040C, Size 512 KB
+!   o Boot Image
+!     Version 6.0.0T185, Size , Check Sum d5b7
+!     Compiled on Jun  7 2016 at 16:10:10 labeled as ceb06000
+! ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+!                     *** NetIron CER 2024C-4X ***
+! 
+! Module                                                          Status                       Ports    Starting MAC    
+! S1: 24x1G Copper Ports Virtual Module                           CARD_STATE_UP                24       748e.f8a9.0501
+! S2: 4x10G Ports Virtual Module                                  CARD_STATE_UP                4        748e.f8a9.0531
+ver V6.0.0fT183
+!
+!
+!
+!
+
+!
+no spanning-tree
+!
+!
+vlan 1 name DEFAULT-VLAN 
+!
+
+!
+!
+aaa authentication login default local 
+!
+!
+!
+!
+ntp
+ server 1.1.11.111
+ server 1.1.12.111
+!
+!
+extended-qos-mode
+logging host 10.1.25.231
+logging facility local7
+username admin password .....
+ip route 0.0.0.0/0 10.201.9.1
+!
+!
+!
+!
+!
+snmp-server community ..... ro
+snmp-server host 10.6.10.113 version v2c .....
+!
+!
+!
+!
+!
+!
+!
+interface ethernet 1/5
+ enable
+ ip address 10.201.9.12/24
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+end
+
